@@ -1,0 +1,21 @@
+
+    <br><br><br>
+
+<form #registrationForm="ngForm" (ngSubmit) = "post_api(registrationForm.value)" autocomplete="off">
+  <h1 id="litheader">Register</h1>
+  <div class="inset">
+    <p>
+        <input type="text" name="name" id="name" placeholder="Name" #name = "ngModel" [(ngModel)] = "adduser.name" autocomplete="chrome-off">
+      </p>
+    <p>
+      <input type="text" name="email" id="email" placeholder="Email address" #email = "ngModel" [(ngModel)] = "adduser.email">
+    </p>
+    <p>
+      <input type="password" name="password" id="password" placeholder="Password" #password = "ngModel" [(ngModel)] = "adduser.password">
+    </p>
+    <!-- <input class="loginLoginValue" type="hidden" name="service" value="login" /> -->
+  </div>
+  <p class="p-container">
+    <button type="submit" id="go">Sign Up</button>
+  </p>
+</form>

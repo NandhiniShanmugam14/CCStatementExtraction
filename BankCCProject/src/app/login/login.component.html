@@ -1,0 +1,18 @@
+
+    <br><br><br>
+
+    <form autocomplete="off" #LoginForm = "ngForm" (ngSubmit) = "post_api(LoginForm.value)">
+      <h1 id="litheader">Login</h1>
+      <div class="inset">
+        <p>
+          <input type="text" name="email" id="email" placeholder="Email address" #email = "ngModel" [(ngModel)] = "user.email">
+        </p>
+        <p>
+          <input type="password" name="password" id="password" placeholder="Password" #password = "ngModel" [(ngModel)] = "user.password">
+        </p>
+      </div>
+      <p class="p-container">
+        <button type="submit" id="go">Sign in</button>
+      </p>
+    </form>
+    

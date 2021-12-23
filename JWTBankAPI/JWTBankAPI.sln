@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWTBankAPI", "JWTBankAPI.csproj", "{13F68F83-24E2-48FE-BE9D-AC43125062D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13F68F83-24E2-48FE-BE9D-AC43125062D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F68F83-24E2-48FE-BE9D-AC43125062D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F68F83-24E2-48FE-BE9D-AC43125062D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F68F83-24E2-48FE-BE9D-AC43125062D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E244CFA3-E576-4D12-8A93-D762CA7531AD}
+	EndGlobalSection
+EndGlobal
