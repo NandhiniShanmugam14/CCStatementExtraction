@@ -15,10 +15,10 @@ userRouter = APIRouter()
 async def find_all_users():
     return serializeList(conn.local.user.find())
 
-@userRouter.post('/')
-async def save_user(cus:user):
-    conn.local.user.insert_one(dict(cus))
-    return serializeList(conn.local.user.find())
+# @userRouter.post('/')
+# async def save_user(cus:user):
+#     conn.local.user.insert_one(dict(cus))
+#     return serializeList(conn.local.user.find())
 
 @userRouter.post('/pdf')
 async def upload_file(file: UploadFile = File(...)):
@@ -80,13 +80,9 @@ async def upload_file(file: UploadFile = File(...)):
                 date=d[0]+" "+d[1]+" "+d[2]
                 for  i in range(4, len(d)):
                     if(d[i].find('$')):
-                        activity_desc += d[i-1]+d[i]
-                    else:
-                        if(count2 == 1):
-                            amount = d[i]
-                            count2 = 0
-                        else:
-                            count2 += 1
+                        activity_desc += d[i-1]+" "+d[i]
+                        amount = d[i+1]
+                    
                 conn.local.user.find_one_and_update({"AccountNumber":account_number},{"$push":{"userCredit":{"date":date,"activity":activity_desc,"amount":amount}}},{"upsert":True})
         return "Hi "+ username+"!! Credit Card statement added successfully"
     else:
