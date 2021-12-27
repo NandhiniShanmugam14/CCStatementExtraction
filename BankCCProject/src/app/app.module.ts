@@ -18,7 +18,6 @@ import { ChartComponent } from './chart/chart.component';
 import { NgChartsModule } from 'ng2-charts';
 
 
-
 export function tokenGet() {
   return localStorage.getItem("jwt");
 }
@@ -33,7 +32,7 @@ const routes: Routes = [
     LoginComponent,
     HomeComponent,
     FileuploadComponent,
-    ChartComponent
+    ChartComponent,
   ],
   imports: [
     BrowserModule,

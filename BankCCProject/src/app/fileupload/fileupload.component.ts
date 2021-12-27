@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Upload } from '../models/upload.model';
 import { UploadService } from '../service/upload.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-fileupload',
@@ -18,7 +20,7 @@ export class FileuploadComponent implements OnInit {
     file:[]
   }
 
-  constructor(private uploadService: UploadService) { }
+  constructor(private uploadService: UploadService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -34,11 +36,7 @@ export class FileuploadComponent implements OnInit {
     this.uploadService.postFiles(this.user).subscribe(
       data=>
       {
-        this.successmsg="Hi!! your file was uploaded successfully"
-        this.errormsg=''
-      }, (error) => {
-        this.errormsg = 'Error in Uploading the data!! Please check your pdf statement';
-        this.successmsg=''
+        this.router.navigate(['/chart']);
       }
     )
 

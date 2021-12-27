@@ -8,19 +8,19 @@ import { Upload } from '../models/upload.model';
   providedIn: 'root'
 })
 export class DisplaychartService {
-  req:string = 'http://localhost:8000/';
-  constructor(private _http : HttpClient) { }
+  // req:string = 'http://localhost:8000/';
+  constructor() { }
 
-  getAllCake():Observable<Upload[]>
-  {
-    return this._http.get<Upload[]>(this.req,{
-      headers:new HttpHeaders({
-        'Content-Type':'application/json;charset=UTF-8',
-        'Access-Control-Allow-Origin':'*',
-        'Access-Control-Allow-Method':'*'
-      })
-    });
-  }
+  // getAllCake():Observable<Upload[]>
+  // {
+  //   return this._http.get<Upload[]>(this.req,{
+  //     headers:new HttpHeaders({
+  //       'Content-Type':'application/json;charset=UTF-8',
+  //       'Access-Control-Allow-Origin':'*',
+  //       'Access-Control-Allow-Method':'*'
+  //     })
+  //   });
+  // }
 
   // userDetails() {
   //   return this._http.get('http://localhost:8000/')
