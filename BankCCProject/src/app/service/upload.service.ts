@@ -17,4 +17,8 @@ export class UploadService {
     formData.append("file",user.file)
     return this.httpClient.post(this.req+"/pdf",formData)
   }
+
+  getFiles(): Observable<any> {
+    return this.httpClient.get(`${this.req}/files`);
+  }
 }

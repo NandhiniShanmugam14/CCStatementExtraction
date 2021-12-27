@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChartComponent } from './chart/chart.component';
 import { FileuploadComponent } from './fileupload/fileupload.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -10,7 +11,8 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'fileupload', component: FileuploadComponent}
+  {path: 'fileupload', component: FileuploadComponent},
+  {path: 'chart', component: ChartComponent}
 ];
 
 @NgModule({

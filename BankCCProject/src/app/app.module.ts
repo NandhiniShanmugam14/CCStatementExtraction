@@ -13,6 +13,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { FileuploadComponent } from './fileupload/fileupload.component';
+import { DisplaychartService } from './service/displaychart.service';
+import { ChartComponent } from './chart/chart.component';
+import { NgChartsModule } from 'ng2-charts';
+
 
 
 export function tokenGet() {
@@ -28,7 +32,8 @@ const routes: Routes = [
     RegisterComponent,
     LoginComponent,
     HomeComponent,
-    FileuploadComponent
+    FileuploadComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +41,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    NgChartsModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(routes),
     JwtModule.forRoot({
@@ -46,7 +52,7 @@ const routes: Routes = [
       }
     })
   ],
-  providers: [RegisterService],
+  providers: [RegisterService, DisplaychartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
