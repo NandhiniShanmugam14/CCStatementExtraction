@@ -12,6 +12,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { FileuploadComponent } from './fileupload/fileupload.component';
 
 
 export function tokenGet() {
@@ -26,7 +27,8 @@ const routes: Routes = [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    FileuploadComponent
   ],
   imports: [
     BrowserModule,

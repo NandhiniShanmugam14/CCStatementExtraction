@@ -1,0 +1,21 @@
+
+    <br><br><br>
+
+
+<form>
+  <h1 id="litheader">File Upload</h1>
+  <div class="inset">
+    <p>
+      <input type="file" name="upload" id="upload" (change)="chooseFile($event)">
+    </p>
+    <span class="text-success alert " style='color: greenyellow;'>{{ successmsg }}</span>
+    <span class="text-danger alert " style='color: red;'>{{ errormsg }}</span>
+    <br>
+  </div>
+  <p class="p-container">
+    <button type="submit" id="go" (click)="upload()">Upload</button>
+  </p>
+</form>
+
+
+    
