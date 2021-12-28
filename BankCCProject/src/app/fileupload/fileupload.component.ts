@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./fileupload.component.css']
 })
 export class FileuploadComponent implements OnInit {
-
+  custno=''
+  progress = 0;
   successmsg = '';
   errormsg = '';
 
@@ -36,7 +37,12 @@ export class FileuploadComponent implements OnInit {
     this.uploadService.postFiles(this.user).subscribe(
       data=>
       {
-        this.router.navigate(['/chart']);
+        this.successmsg=data
+        this.custno=data
+        this.errormsg=''
+      }, (error) => {
+        this.errormsg = 'Error in Uploading the data!! Please check your pdf statement';
+        this.successmsg=''
       }
     )
 

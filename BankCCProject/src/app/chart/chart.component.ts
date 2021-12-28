@@ -14,6 +14,7 @@ import * as d3Csv from 'd3';
 export class ChartComponent implements OnInit {
   currentRate = 8;
   title = 'Barchart';
+  accno = '';
   width: number;
   height: number;
   margin = { top: 20, right: 20, bottom: 30, left: 40 };
@@ -22,36 +23,41 @@ export class ChartComponent implements OnInit {
   svg: any;
   g: any;
   color: any;
-  isChart: boolean | undefined;
-  
+  barshow=true
   constructor() {
     this.width = 900 - this.margin.left - this.margin.right;
     this.height = 500 - this.margin.top - this.margin.bottom;
    }
 
    convertDataToRecords(data: any) {
-    console.log(data);
-    this.title = `Analytic ${data[0].userName} spending`;
+    // console.log(data);
+    this.title = `${data[0].userName}`;
+    this.accno = `${data[0].AccountNumber}`;
     let userCredit = data[0].userCredit;
     var result:any = [];
     userCredit.reduce(function(res:any, value:any) {
       if (!res[value.activity]) {
-        res[value.activity] = { activity: value.activity, amount: 0 };
+        res[value.activity] = { activity: value.activity, amount: value.amount.slice(1) };
+        // console.log(res[value.activity])
+        
+
         result.push(res[value.activity])
-        res[value.activity].amount += value.amount;
+        // res[value.activity].amount += value.amount.slice(1);
       }
       return res;
     }, {});
     
     console.log(userCredit);
     
-    console.log(result)
+    // console.log(result)
     return result;
   }
   ngOnInit() {
     d3Csv.json('http://127.0.0.1:8000/').then((data) => {
       let convertedData = this.convertDataToRecords(data);
-console.log(convertedData);
+      // console.log(convertedData);
+      this.barshow=true
+      // console.log(this.barshow)
 
       this.initSvg();
       this.initAxis(convertedData);

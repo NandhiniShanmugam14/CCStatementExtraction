@@ -10,7 +10,6 @@ from schemas.user import serializeDict, serializeList
 from fastapi.responses import FileResponse
 
 userRouter = APIRouter()
-
 @userRouter.get('/')
 async def find_all_users():
     return serializeList(conn.local.user.find())

@@ -1,0 +1,20 @@
+.chart-main{
+    display: block;
+    width: 500px; 
+     height: 500px;
+    
+  }
+  
+  .chart-border{
+    margin: 10px;
+    margin-left: 250px;
+    padding:40px 20px 50px;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    width: 650px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }

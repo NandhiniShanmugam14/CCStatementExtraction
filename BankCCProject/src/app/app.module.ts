@@ -16,6 +16,7 @@ import { FileuploadComponent } from './fileupload/fileupload.component';
 import { DisplaychartService } from './service/displaychart.service';
 import { ChartComponent } from './chart/chart.component';
 import { NgChartsModule } from 'ng2-charts';
+import { PiechartComponent } from './piechart/piechart.component';
 
 
 export function tokenGet() {
@@ -33,6 +34,7 @@ const routes: Routes = [
     HomeComponent,
     FileuploadComponent,
     ChartComponent,
+    PiechartComponent,
   ],
   imports: [
     BrowserModule,
