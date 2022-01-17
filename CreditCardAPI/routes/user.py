@@ -7,7 +7,6 @@ from fastapi import UploadFile
 from models.user import user
 from config.db import conn
 from schemas.user import serializeDict, serializeList
-from fastapi.responses import FileResponse
 
 userRouter = APIRouter()
 @userRouter.get('/')
@@ -91,6 +90,5 @@ async def upload_file(file: UploadFile = File(...)):
 @userRouter.delete('/{id}')
 async def delete_user(id,user: user):
     return serializeDict(conn.local.user.find_one_and_delete({"_id":ObjectId(id)}))
-
 
 

@@ -2,10 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 
-import * as d3 from 'd3-selection';
-import * as d3Scale from 'd3-scale';
-import * as d3Array from 'd3-array';
-import * as d3Axis from 'd3-axis';
 import * as d3Csv from 'd3';
 
 @Component({

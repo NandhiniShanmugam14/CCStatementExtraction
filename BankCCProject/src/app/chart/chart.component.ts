@@ -15,6 +15,7 @@ export class ChartComponent implements OnInit {
   currentRate = 8;
   title = 'Barchart';
   accno = '';
+  due = '';
   width: number;
   height: number;
   margin = { top: 20, right: 20, bottom: 30, left: 40 };
@@ -33,6 +34,7 @@ export class ChartComponent implements OnInit {
     // console.log(data);
     this.title = `${data[0].userName}`;
     this.accno = `${data[0].AccountNumber}`;
+    this.due =  `${data[0].paymentDue}`;
     let userCredit = data[0].userCredit;
     var result:any = [];
     userCredit.reduce(function(res:any, value:any) {
